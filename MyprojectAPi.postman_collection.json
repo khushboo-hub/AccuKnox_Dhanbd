@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "26c51cc4-130f-4726-a5c5-d68f4c1aa44c",
+		"name": "MyprojectAPi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12851526"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/api/signup/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"yourpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/login/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"avika@example.com\",\r\n  \"password\": \"yourpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/search/?q=avika",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyNjg3MDg1LCJpYXQiOjE3MjI2ODY3ODUsImp0aSI6ImFlNWYyODVmZTM5MTQ3ODZhYTdjN2M2YjNjNzMzNDI4IiwidXNlcl9pZCI6Nn0.zEY2sglHtwmT0tRefhruElMESb2EykUZl6DBnwvHcW0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/search/?q=avika",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "avika"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8000/api/search/?q=avika",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/search/?q=a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 03 Aug 2024 12:12:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "409"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 7,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"email\": \"khushik258@gmail.com\",\n            \"name\": \"default_name\"\n        },\n        {\n            \"email\": \"avika@gmail.com\",\n            \"name\": \"default_name\"\n        },\n        {\n            \"email\": \"testuser@example.com\",\n            \"name\": \"default_name\"\n        },\n        {\n            \"email\": \"paki@gmail.com\",\n            \"name\": \"default_name\"\n        },\n        {\n            \"email\": \"user@example.com\",\n            \"name\": \"default_name\"\n        },\n        {\n            \"email\": \"avika@example.com\",\n            \"name\": \"avika\"\n        },\n        {\n            \"email\": \"Amarendra@example.com\",\n            \"name\": \"Amarendra\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8000/api/friend-request/send/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyNjkwODYyLCJpYXQiOjE3MjI2OTA1NjIsImp0aSI6ImIwYmU4MTU2YTY1NjRjMzE5MDA5YWY4Y2RjZDZlZDg4IiwidXNlcl9pZCI6N30.moorLN03LPFaQO6acXp8IFwTXtgepM6HkpTyoa0f3QA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"to_user_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/friend-request/send/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friend-request",
+						"send",
+						""
+					]
+				},
+				"description": "Send Freiend Request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/friend-request/accept/1/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyNjkwODYyLCJpYXQiOjE3MjI2OTA1NjIsImp0aSI6ImIwYmU4MTU2YTY1NjRjMzE5MDA5YWY4Y2RjZDZlZDg4IiwidXNlcl9pZCI6N30.moorLN03LPFaQO6acXp8IFwTXtgepM6HkpTyoa0f3QA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/friend-request/accept/1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friend-request",
+						"accept",
+						"1",
+						""
+					]
+				},
+				"description": "Accept Friend Request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/friend-request/reject/1/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyNjkxMzY0LCJpYXQiOjE3MjI2OTEwNjQsImp0aSI6IjZmNTRjOWExM2Y3OTRlYjJiZTI2Y2ZiN2RkMmU1NDYwIiwidXNlcl9pZCI6Nn0.mUdXYThrM2h7_5-gvzK8ON9K_CZ9Y2jMc6qiQAkBV_o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/friend-request/reject/1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friend-request",
+						"reject",
+						"1",
+						""
+					]
+				},
+				"description": "Reject Freiend Request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/friends/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyODQzODM3LCJpYXQiOjE3MjI4NDI5MzcsImp0aSI6IjQyZDRjOWNhMjliOTQyYjBiZDMwMTI0ODIxMGFmMzMwIiwidXNlcl9pZCI6OX0.tY1CVr1G_QoKVsqym4NEVexnHrOIRv2eID2m2mm8CJ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/friends/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends",
+						""
+					]
+				},
+				"description": "The response should include a list of friends (users who have accepted friend requests)."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/pending-requests/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/pending-requests/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pending-requests",
+						""
+					]
+				},
+				"description": "Pending friend request"
+			},
+			"response": []
+		}
+	]
+}
