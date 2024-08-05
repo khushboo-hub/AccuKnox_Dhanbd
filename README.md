@@ -1,5 +1,3 @@
-# AccuKnox_Dhanbd
-# AccuKnox_Assignment
 # Social Networking API
 Create an API for social networking application using Django Rest Framework with
 below functionalities.
@@ -57,29 +55,30 @@ You need to download a client with respect to the python version you are using.
 
 
 ### How to install downloaded mysqlclient
+   pip install  <absolute path to your downloaded mysqlclient>
+### Endpoints
+- **POST** `/api/signup/` - User registration
+- **POST** `/api/login/` - User login
+- **GET** `/api/search/` - Search for users
+- **POST** `/api/friend-request/send/` - Send a friend request
+- **POST** `/api/friend-request/accept/<request_id>/` - Accept a friend request
+- **POST** `/api/friend-request/reject/<request_id>/` - Reject a friend request
+- **GET** `/api/friends/` - List friends
+- **GET** `/api/pending-requests/` - List pending friend requests
+- 
 
-    pip install  <absolute path to your downloaded mysqlclient>
+## Postman Collection
 
-##API Endpoints:
-Base URL: `http://127.0.0.1:8000/api/`
-POST /api/signup/ - User registration
-POST /api/login/ - User login
-GET /api/search/ - Search for users
-POST /api/friend-request/send/ - Send a friend request
-POST /api/friend-request/accept/<request_id>/ - Accept a friend request
-POST /api/friend-request/reject/<request_id>/ - Reject a friend request
-GET /api/friends/ - List friends
-GET /api/pending-requests/ - List pending friend requests
-###Postman Collection
-Open Postman and create a new collection.
-Add each API endpoint to the collection with the relevant HTTP method, URL, request body, and headers.
-Click on the collection name in Postman.
-Click on the three dots (more options) and select Export.
-Choose the format (e.g., Collection v2.1 (recommended)).
-Save the file (e.g., myprojectAPI.postman_collection.json).
-You  can see "MyprojectAPi.postman_collection.json "  added in this project directory.
+1. Open Postman and create a new collection.
+2. Add each API endpoint to the collection with the relevant HTTP method, URL, request body, and headers.
+3. Click on the collection name in Postman.
+4. Click on the three dots (more options) and select `Export`.
+5. Choose the format (e.g., `Collection v2.1 (recommended)`).
+6. Save the file as `myprojectAPI.postman_collection.json`.
 
-##Requirements
+You can see `myprojectAPI.postman_collection.json` added in this project directory.
+
+## Requirements
 Python 3.8 or higher
 Django 4.2 or higher
 Django REST Framework
